@@ -4,6 +4,7 @@
     <header>
       <router-link to="/">🏠</router-link>
       <router-link to="/login">🔐</router-link>
+      <a href="#" @click.prevent="logout">🚪</a>
     </header>
 
     <h1>Demo Auth Vue</h1>
@@ -14,6 +15,12 @@
 <script>
 export default {
   name: 'app',
+
+  methods: {
+    logout () {
+
+    }
+  }
 }
 </script>
 

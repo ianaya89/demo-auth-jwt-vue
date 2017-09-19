@@ -2,7 +2,7 @@
   <div>
     <h2>Login</h2>
     <div>
-      <form>
+      <form @submit.prevent="login">
         <input type="text" v-model="email" placeholder="Email">
         <input type="password" v-model="password" placeholder="Password">
         <button>Login</button>
@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: 'login',
 
   data () {
     return {
@@ -25,6 +26,12 @@ export default {
   computed: {
     user () {
       return `Welcome ${this.user.fullname}!`
+    }
+  },
+
+  methods: {
+    login () {
+
     }
   }
 }
