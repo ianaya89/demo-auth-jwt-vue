@@ -1,14 +1,15 @@
 {
-  "name": "demo-auth-vue",
-  "description": "A Vue.js project",
+  "name": "demo-auth-jwt-vue",
+  "description": "🔐 Vue.js demo app with JWT authentication",
   "version": "1.0.0",
   "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --port 9696",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "bulma": "^0.6.0",
     "vue": "^2.3.3",
     "vue-router": "^2.7.0"
   },
@@ -25,6 +26,8 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "file-loader": "^0.9.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "vue-loader": "^12.1.0",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.6.1",

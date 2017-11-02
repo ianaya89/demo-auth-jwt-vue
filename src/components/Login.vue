@@ -1,53 +1,77 @@
 <template>
-  <div>
-    <h2>Login</h2>
-    <div>
+  <main class="container">
+    <div class="form-container">
+      <h1 class="title">Login</h1>
       <form @submit.prevent="login">
-        <input type="text" v-model="email" placeholder="Email">
-        <input type="password" v-model="password" placeholder="Password">
-        <button>Login</button>
-      </form>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input v-model="email" class="input" type="email" placeholder="Ingrese su email" required>
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label">Passowrd</label>
+          <div class="control">
+            <input v-model="password" class="input" type="passwotd" placeholder="Ingrese su contraseñar" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <button class="button is-success">Login</button>
+          </p>
+        </div>
+    </form>
+
+    <div>
+      <p>
+        {{ error.statusText }}
+        <small>{{ error.status }}</small>
+      </p>
     </div>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
+import api from '@/api'
+
 export default {
   name: 'login',
 
   data () {
     return {
       email: '',
-      password: ''
-    }
-  },
+      password: '',
 
-  computed: {
-    user () {
-      return `Welcome ${this.user.fullname}!`
+      error: {}
     }
   },
 
   methods: {
     login () {
+      api.authenticate(this.email, this.password)
+        .then(res => {
+          window.localStorage.token = res.token
+          window.localStorage.user = window.atob(res.token.split('.')[1])
 
+          this.$router.push('/')
+        })
+        .catch(err => ( this.error = err ))
     }
   }
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+  .form-container{
+    width: 600px;
+    margin: auto;
+  }
 
-input {
-  border-radius: 5px;
-  display: inline-block;
-  height: 30px;
-  width: 200px;
-}
-
-button {
-  height: 35px;
-  width: 80px;
-}
+  form {
+    width: 400px;
+    margin: auto;
+  }
 </style>

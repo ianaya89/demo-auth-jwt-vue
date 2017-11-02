@@ -1,6 +1,6 @@
-# demo-auth-vue
+# demo-auth-jwt-vue
 
-> A Vue.js project
+> 🔐 Vue.js demo app with JWT authentication
 
 ## Build Setup
 
