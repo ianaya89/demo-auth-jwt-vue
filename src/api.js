@@ -1,7 +1,7 @@
 import trae from 'trae'
 
 const url = window.location.href.includes('localhost')
-  ? 'http://localhost:8989' : 'http://platzi-jwt.now.sh'
+  ? 'http://localhost:8989' : 'https://platzi-jwt.now.sh'
 
 trae.baseUrl(url)
 
