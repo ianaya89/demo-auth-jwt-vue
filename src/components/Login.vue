@@ -13,7 +13,7 @@
         <div class="field">
           <label class="label">Passowrd</label>
           <div class="control">
-            <input v-model="password" class="input" type="passwotd" placeholder="Ingrese su contraseñar" required>
+            <input v-model="password" class="input" type="password" placeholder="Ingrese su contraseña" required>
           </div>
         </div>
 
