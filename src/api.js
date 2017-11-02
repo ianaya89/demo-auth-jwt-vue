@@ -1,6 +1,9 @@
 import trae from 'trae'
 
-trae.baseUrl('http://localhost:8989')
+const url = window.location.href.includes('localhost')
+  ? 'http://localhost:8989' : 'http://platzi-jwt.now.sh'
+
+trae.baseUrl(url)
 
 trae.before((config) => {
   const token = window.localStorage.token
